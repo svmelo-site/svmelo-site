@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SV Melo Tecnologia — tecnologia para simplificar sua rotina fiscal e empresarial.">
+  <title>SV Melo Tecnologia | Soluções Fiscais</title>
+  <style>
+    :root{
+      --navy:#062442;
+      --navy2:#031b33;
+      --marsala:#8d1738;
+      --marsala2:#a51e45;
+      --green:#159b72;
+      --orange:#f59a00;
+      --cream:#f7f5f0;
+      --white:#ffffff;
+      --text:#18334f;
+      --muted:#6b7e92;
+      --line:#dfe5eb;
+      --shadow:0 18px 50px rgba(3,27,51,.12);
+      --radius:24px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.55}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.08)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-weight:900;font-size:25px;letter-spacing:-1px}
+    .logo span{font-weight:400;opacity:.82}
+    .navlinks{display:flex;gap:26px;font-size:14px;color:#c7d5e3}
+    .navlinks a:hover{color:#fff}
+    .navbtn{background:var(--marsala2);padding:12px 18px;border-radius:10px;font-weight:800}
+    .hero{background:var(--navy);color:#fff;padding:85px 0 90px;overflow:hidden}
+    .eyebrow{color:var(--orange);font-size:13px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:24px}
+    .eyebrow:before{content:"";display:inline-block;width:38px;height:3px;background:var(--orange);vertical-align:middle;margin-right:15px}
+    h1{font-size:clamp(42px,7vw,76px);line-height:1.03;letter-spacing:-3px;max-width:820px;margin-bottom:25px}
+    h1 .accent{color:var(--orange)}
+    .hero p{font-size:20px;color:#b9c9d9;max-width:690px;margin-bottom:35px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 23px;border-radius:12px;font-weight:900}
+    .btn-primary{background:var(--marsala2);color:#fff}
+    .btn-secondary{border:1px solid #5c7187;color:#fff}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}
+    .mockup{background:#f2f5f8;border:8px solid #dfe5eb;border-radius:18px;padding:18px;color:var(--text);box-shadow:0 30px 80px rgba(0,0,0,.25);transform:rotate(1deg)}
+    .mock-head{height:30px;border-bottom:1px solid #d8dfe6;margin-bottom:15px;display:flex;justify-content:space-between;font-size:10px;color:#718399}
+    .dash{display:grid;grid-template-columns:90px 1fr;gap:12px}
+    .side{background:var(--marsala);border-radius:10px;padding:12px 7px;color:#fff;font-size:9px;display:flex;flex-direction:column;gap:17px}
+    .dashmain{display:grid;gap:12px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .mini,.chart{background:#fff;border-radius:10px;padding:12px;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+    .mini b{display:block;font-size:18px}.mini small{color:#8090a0;font-size:9px}
+    .chart{height:150px;position:relative;overflow:hidden}
+    .bars{height:100%;display:flex;align-items:end;gap:7px;padding:12px}
+    .bars i{display:block;flex:1;background:var(--marsala);border-radius:4px 4px 0 0;opacity:.9}
+    .numbers{background:var(--navy);color:#fff;padding:52px 0}
+    .number-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+    .number strong{font-size:34px;color:var(--orange);display:block}
+    .number span{color:#aebfd0;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+    section{padding:88px 0}
+    .light{background:var(--cream)}
+    .section-title{max-width:750px;margin-bottom:45px}
+    .section-title h2{font-size:clamp(32px,5vw,50px);line-height:1.05;letter-spacing:-1.8px;margin-bottom:16px;color:var(--navy)}
+    .section-title h2 .accent{color:var(--marsala)}
+    .section-title p{font-size:19px;color:#526a82}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.2s}
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .icon{width:48px;height:48px;border-radius:14px;background:#f6e9ee;color:var(--marsala);display:grid;place-items:center;font-size:22px;margin-bottom:20px}
+    .card h3{font-size:21px;color:var(--navy);margin-bottom:9px}
+    .card p{color:var(--muted);font-size:15px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .list{display:grid;gap:20px}
+    .item{display:grid;grid-template-columns:42px 1fr;gap:15px}
+    .check{width:36px;height:36px;border-radius:50%;background:#e4f5ef;color:var(--green);display:grid;place-items:center;font-weight:900}
+    .item h3{font-size:19px;color:var(--navy);margin-bottom:3px}.item p{color:var(--muted)}
+    .panel{background:var(--navy);color:#fff;border-radius:28px;padding:35px;box-shadow:var(--shadow)}
+    .panel .label{color:var(--orange);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:800}
+    .price{display:flex;justify-content:space-between;align-items:end;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+    .price:last-child{border-bottom:0}.price small{display:block;color:#92a8bd}.price b{font-size:29px;color:#fff}.price.highlight b{color:var(--orange);font-size:40px}
+    .steps{display:grid;gap:0;margin-top:35px}
+    .step{display:grid;grid-template-columns:55px 1fr;gap:18px;position:relative;padding-bottom:28px}
+    .step:not(:last-child):before{content:"";position:absolute;left:27px;top:55px;height:calc(100% - 40px);width:2px;background:#dce3e9}
+    .stepno{width:55px;height:55px;border:1px solid #d6dfe7;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--navy);font-weight:800;z-index:1}
+    .step h3{font-size:21px;color:var(--navy);margin:3px 0 5px}.step p{color:var(--muted)}
+    .quote{background:#f0f3f7;border-left:5px solid var(--orange);padding:28px;margin-bottom:35px}
+    .quote strong{font-size:22px;color:var(--navy);display:block;margin-bottom:10px}
+    .quote small{letter-spacing:1.5px;text-transform:uppercase;color:#65798e}
+    .cta{background:var(--navy);color:#fff;text-align:center;padding:80px 0}
+    .cta h2{font-size:clamp(34px,5vw,55px);line-height:1.05;margin-bottom:16px;letter-spacing:-2px}
+    .cta p{color:#b9c9d9;font-size:18px;max-width:650px;margin:0 auto 28px}
+    footer{background:var(--navy2);color:#9db0c2;padding:28px 0;font-size:13px}
+    footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .whatsapp{position:fixed;right:22px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#13a875;color:#fff;display:grid;place-items:center;font-size:28px;box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:30}
+    @media(max-width:850px){
+      .navlinks{display:none}.hero-grid,.split{grid-template-columns:1fr}.hero{padding:65px 0}.mockup{margin-top:15px}
+      .number-grid{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}
+      section{padding:65px 0}h1{letter-spacing:-2px}.split{gap:35px}
+    }
+    @media(max-width:520px){
+      nav{height:68px}.navbtn{padding:10px 12px;font-size:12px}.number strong{font-size:27px}
+      .number-grid{gap:22px}.hero p{font-size:17px}.buttons .btn{width:100%}
+      .mockup{padding:10px;border-width:5px}.dash{grid-template-columns:65px 1fr}.stats{grid-template-columns:1fr}
+      .side{font-size:7px}.chart{height:115px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">SV MELO <span>TECNOLOGIA</span></a>
+      <div class="navlinks">
+        <a href="#solucoes">Soluções</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#contadores">Contadores</a>
+        <a href="#parceria">Parcerias</a>
+      </div>
+      <a class="navbtn" href="https://wa.me/5562999999999?text=Ol%C3%A1!%20Quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20SV%20Melo." target="_blank">Fale conosco</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Tecnologia para sua rotina fiscal</div>
+        <h1>Sua rotina fiscal pode ser <span class="accent">mais simples.</span></h1>
+        <p>Soluções fiscais e sistemas para empresas e escritórios que querem reduzir tarefas manuais, ganhar controle e trabalhar com mais eficiência.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#solucoes">Conheça nossas soluções →</a>
+          <a class="btn btn-secondary" href="#parceria">Quero ser parceiro</a>
+        </div>
+      </div>
+      <div class="mockup" aria-label="Prévia ilustrativa de painel de gestão">
+        <div class="mock-head"><span>SV MELO • PAINEL</span><span>Dashboard</span></div>
+        <div class="dash">
+          <div class="side"><b>SV MELO</b><span>Dashboard</span><span>Empresas</span><span>Relatórios</span><span>Financeiro</span><span>Config.</span></div>
+          <div class="dashmain">
+            <div class="stats">
+              <div class="mini"><b>128</b><small>EMPRESAS</small></div>
+              <div class="mini"><b>4.280</b><small>DOCUMENTOS</small></div>
+              <div class="mini"><b>98%</b><small>AUTOMAÇÃO</small></div>
+            </div>
+            <div class="chart">
+              <small>Emissões por mês</small>
+              <div class="bars">
+                <i style="height:35%"></i><i style="height:48%"></i><i style="height:43%"></i><i style="height:58%"></i><i style="height:64%"></i><i style="height:75%"></i><i style="height:88%"></i><i style="height:96%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="numbers">
+    <div class="container number-grid">
+      <div class="number"><strong>+X</strong><span>Empresas atendidas</span></div>
+      <div class="number"><strong>+X</strong><span>Documentos fiscais</span></div>
+      <div class="number"><strong>+X</strong><span>Parceiros</span></div>
+      <div class="number"><strong>Brasil</strong><span>Atendimento remoto</span></div>
+    </div>
+  </section>
+
+  <section id="solucoes">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">01 · Nossas soluções</div>
+        <h2>Tecnologia para <span class="accent">simplificar</span> sua operação.</h2>
+        <p>Escolha as ferramentas que fazem sentido para sua empresa ou para a rotina do seu escritório.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">🧾</div><h3>Emissão de documentos fiscais</h3><p>Emita seus documentos fiscais com mais agilidade e organização.</p></article>
+        <article class="card"><div class="icon">⚙️</div><h3>Automação de processos</h3><p>Menos tarefas repetitivas e mais tempo para o que realmente importa.</p></article>
+        <article class="card"><div class="icon">📂</div><h3>Gestão de XML</h3><p>Organize e consulte seus documentos fiscais de forma prática.</p></article>
+        <article class="card"><div class="icon">📊</div><h3>SPEDs e obrigações</h3><p>Ferramentas para apoiar sua rotina fiscal e contábil.</p></article>
+        <article class="card"><div class="icon">💻</div><h3>Sistemas para empresas</h3><p>Soluções para emissão, gestão e controle da operação.</p></article>
+        <article class="card"><div class="icon">🤝</div><h3>Soluções para escritórios</h3><p>Recursos para ampliar sua oferta e fortalecer o relacionamento com clientes.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="light" id="empresas">
+    <div class="container split">
+      <div>
+        <div class="section-title">
+          <div class="eyebrow">02 · Para empresas</div>
+          <h2>Menos trabalho manual. <span class="accent">Mais controle.</span></h2>
+          <p>Uma rotina fiscal mais organizada começa com ferramentas que trabalham junto com você.</p>
+        </div>
+        <div class="list">
+          <div class="item"><div class="check">✓</div><div><h3>Emissão simplificada</h3><p>Mais agilidade para emitir e consultar documentos.</p></div></div>
+          <div class="item"><div class="check">✓</div><div><h3>Automação</h3><p>Reduza processos repetitivos e erros operacionais.</p></div></div>
+          <div class="item"><div class="check">✓</div><div><h3>Informação organizada</h3><p>Tenha os dados fiscais mais acessíveis para sua rotina.</p></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="label">Uma rotina mais eficiente</div>
+        <div class="price"><div><small>Antes</small>Mais tarefas manuais</div><b>↘</b></div>
+        <div class="price"><div><small>Com tecnologia</small>Processos mais simples</div><b>↗</b></div>
+        <div class="price highlight"><div><small>Resultado</small>Mais tempo para o negócio</div><b>+</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contadores">
+    <div class="container split">
+      <div class="panel">
+        <div class="label">Para escritórios contábeis</div>
+        <div class="price"><div><small>Seu escritório</small>Indica a solução</div><b>01</b></div>
+        <div class="price"><div><small>Seu cliente</small>Usa a tecnologia</div><b>02</b></div>
+        <div class="price highlight"><div><small>Resultado</small>Mais valor na parceria</div><b>03</b></div>
+      </div>
+      <div>
+        <div class="section-title">
+          <div class="eyebrow">03 · Para contadores</div>
+          <h2>Seu escritório pode oferecer <span class="accent">mais tecnologia.</span></h2>
+          <p>Conte com uma parceira para apresentar soluções fiscais aos seus clientes sem complicar sua operação.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="stepno">01</div><div><h3>Você identifica a necessidade</h3><p>Encontre oportunidades dentro da sua carteira.</p></div></div>
+          <div class="step"><div class="stepno">02</div><div><h3>Apresentamos a solução</h3><p>A SV Melo apoia o processo comercial e técnico.</p></div></div>
+          <div class="step"><div class="stepno">03</div><div><h3>Seu cliente ganha eficiência</h3><p>Uma parceria que gera valor para todos.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light" id="parceria">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">04 · Parcerias</div>
+        <h2>Conecte sua carteira a soluções que <span class="accent">fazem sentido.</span></h2>
+        <p>Buscamos escritórios contábeis e parceiros comerciais interessados em ampliar seu portfólio de soluções.</p>
+      </div>
+      <div class="quote">
+        <strong>“Tecnologia não precisa complicar. Ela precisa resolver.”</strong>
+        <small>SV Melo Tecnologia · Conectando tecnologia com propósito</small>
+      </div>
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://wa.me/5562999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20ser%20parceiro%20da%20SV%20Melo." target="_blank">Quero ser parceiro →</a>
+        <a class="btn" style="background:#fff;border:1px solid #d7dfe7;color:var(--navy)" href="https://wa.me/5562999999999?text=Ol%C3%A1!%20Quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20SV%20Melo." target="_blank">Falar com a SV Melo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Sua rotina fiscal pode ser <span style="color:var(--orange)">mais simples.</span></h2>
+      <p>Vamos encontrar a solução ideal para sua empresa ou para o seu escritório.</p>
+      <a class="btn btn-primary" href="https://wa.me/5562999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SV%20Melo." target="_blank">Falar pelo WhatsApp →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div><strong style="color:#fff">SV MELO TECNOLOGIA</strong> · Tecnologia para simplificar sua rotina fiscal.</div>
+    <div>© 2026 SV Melo Tecnologia</div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5562999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SV%20Melo." target="_blank" aria-label="Falar no WhatsApp">◔</a>
+
+</body>
+</html>
